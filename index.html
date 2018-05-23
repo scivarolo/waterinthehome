@@ -7,29 +7,22 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
-<!--         <link rel="stylesheet" href="css/chartist.css"> -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
         <div class="proceed-alert">Please answer all questions before proceeding.</div>
-        
+
         <div class="questions-wrapper">
 
           <div class="sidebar main-sidebar">
             <header class="sidebar-logo">
               <img src="images/title.svg" />
             </header>
-            
+
             <!-- gauge -->
             <div class="gauge-cont" data-percentage="80">
               <div class="gauge">
@@ -40,11 +33,11 @@
               <div class="pointer-knob"></div>
             </div>
             <!-- end gauge -->
-            
+
             <div class="running-total">Running Total: <span id="runningDailyUsageTotal">0</span> gallons</div>
           </div>
 
-          
+
           <ol class="questions">
             <li class="slide current-slide landing-slide">
               <section class="landing">
@@ -75,17 +68,17 @@
                 <button class="continue-button">Continue</button>
               </section>
             </li>
-            
-            <li class="slide">  
+
+            <li class="slide">
               <!-- Shower Questions -->
               <section class="shower question-page">
                 <form>
                   <fieldset class="round-buttons">
                     <legend>How many showers do you take daily?</legend>
                     <input type="radio" name="shower_count" value="0" id="shower0"><label for="shower0">0</label>
-                    <input type="radio" name="shower_count" value="1" id="shower1"><label for="shower1">1</label> 
-                    <input type="radio" name="shower_count" value="2" id="shower2"><label for="shower2">2</label> 
-                    <input type="radio" name="shower_count" value="3" id="shower3"><label for="shower3">3</label> 
+                    <input type="radio" name="shower_count" value="1" id="shower1"><label for="shower1">1</label>
+                    <input type="radio" name="shower_count" value="2" id="shower2"><label for="shower2">2</label>
+                    <input type="radio" name="shower_count" value="3" id="shower3"><label for="shower3">3</label>
                     <input type="radio" name="shower_count" value="4" id="shower4"><label for="shower4">4</label>
                   </fieldset>
                   <fieldset class="round-buttons">
@@ -129,7 +122,7 @@
                 <button class="continue-button">Continue</button>
               </section>
             </li>
-            
+
             <li class="slide">
               <!-- Toilet Questions -->
               <section class="toilet question-page">
@@ -157,8 +150,8 @@
                 <button class="continue-button">continue</button>
               </section>
             </li>
-            
-            <li class="slide">  
+
+            <li class="slide">
               <!-- Bathroom Sink Questions -->
               <section class="bathroom-sink question-page">
                 <form>
@@ -181,7 +174,7 @@
                 <button class="continue-button">continue</button>
               </section>
             </li>
-            
+
             <li class="slide">
               <!-- Kitchen Sink Questions -->
               <section class="kitchen-sink question-page">
@@ -208,8 +201,8 @@
                 <button class="continue-button">continue</button>
               </section>
             </li>
-            
-            <li class="slide">  
+
+            <li class="slide">
               <!-- Dishwasher Questions -->
               <section class="dishwasher question-page">
                 <form>
@@ -236,7 +229,7 @@
                 <button class="continue-button">Continue</button>
               </section>
             </li>
-            
+
             <li class="slide">
               <!-- Washing Machine Questions -->
               <section class="washing-machine question-page">
@@ -273,7 +266,7 @@
                 <button class="continue-button">Continue</button>
               </section>
             </li>
-                          
+
             <li class="slide">
               <!-- Lawn Questions -->
               <section class="lawn question-page">
@@ -308,7 +301,7 @@
                     <legend>Do you have a sprinkler system with a rain sensor?</legend>
                     <input type="radio" name="rain_sensor" value="1" id="rsy"><label for="rsy">Yes</label>
                     <input type="radio" name="rain_sensor" value="0" id="rsn"><label for="rsn">No</label>
-                    <input type="radio" name="rain_sensor" value="0" id="rsidk"><label for="rsidk">I don't know</label>  
+                    <input type="radio" name="rain_sensor" value="0" id="rsidk"><label for="rsidk">I don't know</label>
                   </fieldset>
                 </form>
                 <button class="previous-button">Previous</button>
@@ -316,7 +309,7 @@
                 <button class="continue-button">Continue</button>
               </section>
             </li>
-            
+
             <li class="slide">
               <!-- Hose Questions -->
               <section class="hose question-page">
@@ -337,8 +330,8 @@
                 <button class="continue-button">Continue</button>
               </section>
             </li>
-            
-            <li class="slide">  
+
+            <li class="slide">
               <!-- Pool Questions -->
               <section class="pool question-page">
                 <form>
@@ -353,10 +346,10 @@
                 </form>
                 <button class="previous-button">Previous</button>
                 <progress value="20" max="20"></progress>
-                <button class="continue-button">Continue</button>          
+                <button class="continue-button">Continue</button>
               </section>
             </li>
-            
+
             <li class="slide results-slide">
               <!-- Results Section -->
               <section class="results results-page">
@@ -407,12 +400,12 @@
                     <span class="usage-value"><span id="yearlyUsage">136,136</span> Gallons</span>
                   </div>
                 </div>
-                
+
                 <button class="restart-button">Start over</button>
               </section>
             </li>
           </ol>
-          
+
           <div class="sidebar results-sidebar">
             <header class="sidebar-logo">
               <img src="images/title.svg" />
@@ -427,7 +420,7 @@
               <span class="small-below"><span class="less-more" id="differenceWord">less</span> than the average</span>
             </div>
           </div>
-          
+
         </div><!-- .questions-wrapper -->
 
 
@@ -438,16 +431,6 @@
         <script src="js/layout.js"></script>
         <script src="js/gauge.js"></script>
         <script src="js/watercalculator.js"></script>
-        
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
     </body>
 </html>
