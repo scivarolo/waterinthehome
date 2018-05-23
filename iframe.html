@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Water in the Home Calculator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #wrap {
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid black;
+      }
+      #frame {
+        width: 1920px;
+        height: 1080px;
+        border: none;
+        transform-origin: 0 0;
+      }
+      @media (max-width: 1930px) {
+        #wrap {
+          width: 1440px;
+          height: 810px;
+        }
+        #frame {
+          transform: scale(0.75);
+        }
+      }
+      @media (max-width: 1440px) {
+        #wrap {
+          width: 960px;
+          height: 540px;
+        }
+        #frame {
+          transform: scale(0.5);
+        }
+      }
+
+      @media (min-width: 1931px) {
+        #wrap {
+          width: 1920px;
+          height: 1080px;
+        }
+        #frame {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <iframe id="frame" src="index.html"></iframe>
+    </div>
+  </body>
+</html>

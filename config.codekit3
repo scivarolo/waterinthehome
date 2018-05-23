@@ -130,6 +130,13 @@
 		"oAP": "\/fonts\/TungstenRnd-Medium.otf",
 		"oF": 0
 		},
+	"\/iframe.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/iframe.html",
+		"oF": 0
+		},
 	"\/images\/title.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -278,6 +285,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/css\/_chartist-settings.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/style.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/style.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
