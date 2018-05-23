@@ -1,0 +1,121 @@
+.results-slide {
+  background-color: $laredo-navy;
+  background-clip: border-box;
+  color: white;
+}
+
+.results-sidebar {
+  background-color: $laredo-navy;
+  color: white;
+}
+
+.average-readout {
+  margin-top: 50px;
+}
+.small-header-above {
+  font-family: "DIN Next Slab Pro";
+  font-size: 24px;
+  display: block;
+  color: $laredo-aqua;
+}
+.small-below {
+  display:block;
+  font-family: "DIN Next Rounded LT Pro";
+  line-height: 1;
+  color: $laredo-green;
+  font-size: 20px;
+}
+
+.average-value {
+  font-family: 'Tungsten Rounded';
+  font-weight: 200;
+  font-size: 120px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.less-more {
+  border-bottom: 2px solid $laredo-green;
+}
+
+.center-column {
+  width: 40vw; float: left;
+}
+.right-column {
+  width: 25vw;
+  float: right;
+}
+
+/* Chart */
+
+.chartist-chart {
+  height: 26vw; 
+  width: 26vw;
+  float: left;
+}
+.chartist-legend {
+  float:right;
+  width: 14vw;
+  height: 26vw;
+}
+
+.chartist-legend h1 {
+  font-family: DIN Next Slab Pro;
+  font-weight: 300;
+}
+
+.legend-label {
+  font-family: "DIN Next Rounded LT Pro";
+  display: block;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.legend-value {
+  font-family: "Tungsten Rounded";
+  font-weight: 200;
+  font-size: 72px;
+  line-height: 1;
+  display:block;
+  margin-bottom: 18px;
+}
+
+.bathroom-usage {
+  color: $laredo-aqua;
+}
+.kitchen-usage {
+  color: $laredo-orange;
+}
+.laundry-usage {
+  color: $laredo-green;
+}
+.outside-usage {
+  color: $laredo-white;
+}
+
+/* Right Column */
+
+.totals-heading {
+  font-family: "DIN Next Slab Pro";
+  font-weight: 300;
+  font-size: 40px;
+  color: $laredo-aqua;
+}
+.usage-label {
+  display: block;
+  font-family: "DIN Next Rounded LT Pro";
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: $laredo-green;
+}
+.usage-value {
+  font-family: "Tungsten Rounded";
+  font-size: 96px;
+  line-height: 1;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.right-column .total {
+  margin-bottom: 25px;
+}

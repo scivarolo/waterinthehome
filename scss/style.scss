@@ -1,0 +1,526 @@
+html, body, button, label, fieldset, input, {
+    cursor: none;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+
+$laredo-aqua: #00adb7;
+$laredo-green: #cbcf2b;
+$laredo-orange: #f59c1e;
+$laredo-navy: #003948;
+$laredo-white: #e2eae4;
+
+//fonts
+@import "typefaces";
+
+@import "variables";
+
+body{
+    font-family: $tungsten-round-book;
+}
+
+fieldset {
+    border: 0;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+legend {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+body {
+  overflow: hidden; //hide scroll bars
+  //cursor: none;
+  //-moz-user-select: none;
+  font-weight: 300;
+}
+
+* {
+  //cursor: none;
+}
+
+.proceed-alert {
+  display: none;
+  position: absolute;
+  color: red;
+  z-index: 10000;
+}
+
+
+.questions-wrapper {
+  position:relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $laredo-aqua; 
+}
+
+ol.questions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  margin: 0;
+  height: 100vh;
+  width: 62.5vw;
+  position: absolute;
+  visibility: hidden;
+  &:not(.landing-slide) {
+    margin-left: 30vw;
+    padding: 2.5vw;
+    width: 70vw;
+  }
+}
+
+.slide.current-slide {
+  visibility: visible;
+}
+
+
+/* Landing Slide */
+
+.landing-slide {
+  text-align: center;
+  width: 100vw;
+  padding-top: 10vh;
+}
+
+.landing-subtitle {
+  color: $laredo-green;
+  font-family: $din-slab-regular;
+  font-size: 34px;
+  margin-top: 80px;
+
+}
+
+.landing-button {
+  margin-top: 50px;
+    font-family: $tungsten-round-book;
+    font-size: 60px;
+}
+
+/* Questions */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 84vh;
+  text-align: center;
+}
+
+legend,
+label {
+  color: $laredo-white;  
+}
+
+legend {
+  display: block;
+  //margin-top: 2vh;
+  margin-bottom: 15px;
+  font-family: $din-slab-regular;
+  font-size: 48px;
+  letter-spacing: -1.5px;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+
+.legend-details {
+  display: block;
+  color: $laredo-green;
+  margin-bottom: 45px;
+  font-family: $din-slab-regular;
+  font-size: 32px;
+  line-height: 0;
+}
+
+input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+label {
+  font-family: $tungsten-round-book;
+  text-transform: uppercase;
+  font-size: 100px;
+  padding: 25px;
+  background-color: $laredo-navy;
+  transition: all 0.125s ease;
+}
+
+/* CSS for round inputs */
+.round-buttons input + label,
+.regular-buttons input + label,
+.round-buttons input + label.regular-button {
+  height: 110px;
+  display:inline-block;
+  background-color: $laredo-navy;
+  border: 4px solid $laredo-green;
+  font-family: $tungsten-round-book;
+  font-size: 4em;
+  text-align: center;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 15px rgba($laredo-navy,0.5);
+}
+
+.round-buttons input + label {
+  width: 110px;
+  border-radius: 50%;
+  line-height: 0.75;
+}
+
+.regular-buttons input + label,
+.round-buttons input + label.regular-button {
+  width: auto;
+  padding-left: 45px;
+  padding-right: 45px;
+  border-radius: 55px;
+  line-height: 0.8;
+  white-space: nowrap;
+}
+
+input:checked + label,
+input:checked + label.regular-button {
+  background-color: $laredo-green;
+}
+
+input:active + label,
+input:active + label.regular-button {
+  background-color: $laredo-green;
+  transform: scale(.85);
+}
+
+/* Buttons */
+
+button {
+  margin: 0;
+  padding: 5px 50px;
+  border: 3px solid $laredo-green;
+  color: $laredo-white;
+  background-color: $laredo-navy; 
+  border-radius: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: $tungsten-round-book;
+  font-size: 3em;
+}
+
+button:active {
+  background-color: $laredo-green;
+}
+
+.previous-button,
+.continue-button {
+  position: absolute;
+  bottom: 2.5vh;
+}
+.continue-button {
+  right: 1.5vw;
+}
+.previous-button {
+  //transform: translateX(-28.5vw);
+}
+
+input {
+
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 300px;
+  height: 25px;
+  background: $laredo-white;
+  border-radius: 15px;
+  margin: 0 auto;
+  display: block;
+  transform: translateY(40px);
+}
+
+progress[value]::-webkit-progress-bar {
+  background: white;
+  border-radius: 15px;
+}
+progress[value]::-webkit-progress-value {
+  background: $laredo-green;
+  border-radius: 15px;
+}
+progress[value]::-moz-progress-bar {
+  background: $laredo-green;
+  border-radius: 15px;
+}
+
+/** Sidebar **/
+
+.sidebar {
+  position: fixed;
+  width: 30vw;
+  height: 100vh;
+  padding: 3vw;
+  background-color: $laredo-navy;
+  box-shadow: 0 0 15px $laredo-navy;
+}
+
+.sidebar-logo {
+  text-align: center;
+}
+
+.running-total {
+  position: absolute;
+  bottom: 3vw;
+  font-family: $tungsten-round-book;
+  font-size: 3vw;
+  line-height: 1;
+  color: $laredo-white;
+}
+
+
+/*----------- Results ------------*/
+
+@import "results";
+
+
+/** Chart **/
+
+@import "chartist";
+
+/*---------- Animations ----------*/
+
+.hide-for-next fieldset {
+  animation: hideForNext 0.5s ease forwards;
+}
+
+@keyframes hideForNext {
+  to { 
+    opacity: 0;
+    transform: translate3d(0, -500px, 0);    
+  }
+}
+
+
+.show-next {
+  visibility: visible;
+}
+
+.show-this-field {
+  animation: showNext 0.5s ease both 0.15s;
+  animation-delay: 0.25s;
+}
+
+@keyframes showNext {
+	from { opacity: 0; 
+  	-webkit-transform: translate3d(0,500px,0);
+  	transform: translate3d(0,500px,0); }
+}
+/*
+
+.hide-for-previous fieldset {
+  animation: hideForPrevious 0.5s ease forwards;
+}
+*/
+
+.hide-this-field {
+  animation: hideForPrevious 0.5s ease forwards;
+}
+
+@keyframes hideForPrevious {
+  to {
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+  }
+}
+
+.show-previous {
+  visibility: visible;
+}
+
+.show-previous fieldset {
+  animation: showPrevious 0.5s ease both 0.15s;
+  animation-delay: 0.25s;
+}
+
+@keyframes showPrevious {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -500px, 0);
+  }
+}
+
+.daily-readout{
+    margin-bottom: 20px;
+}
+.daily-value{
+    font-family: $tungsten-round-book;
+    font-size: 96px;
+    text-transform: uppercase;
+}
+
+.chartist-chart{
+    .ct-label{
+        font-family: $din-round;
+        font-size: 16px;
+        z-index: 99;
+    }
+}
+.chartist-legend{
+    h1{
+        font-family: $din-slab-regular;
+        font-size: 24px;
+    }
+    
+    .legend-label{
+        font-family: $din-round;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    
+    .legend-value{
+        font-family: $tungsten-round-book;
+        font-size: 80px;
+    }
+}
+
+.right-column{
+    .totals-heading{
+        margin-top: 50px;
+        font-family: $din-slab-regular;
+    }
+    .usage-label{
+        font-family: $din-round;
+    }
+    .usage-value{
+        font-family: $tungsten-round-book;
+    }
+}
+
+.restart-button{
+    clear: both;
+    float: right;
+    font-size: 60px;    
+}
+
+.average-readout{
+    .small-header-above{
+        font-family: $din-round;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+    .average-value{
+       font-family: $tungsten-round-book;
+        font-size: 96px; 
+    }
+    .small-below{
+        font-family: $din-round;
+        font-size: 32px;
+        margin-top: 10px;
+    }
+}
+
+
+// Gauges
+
+$width: 400px;
+$height: $width/2;
+
+$background: #2a2a2a;
+$primary: $laredo-green;
+$alternate: #e14e54;
+$gaugewidth: 40px;
+$black: $laredo-navy;
+$white: #fff;
+$speed: 1000ms;
+
+.gauge {
+  width: $width;
+  height: $height;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  width: $width;
+  height: $height;
+  display: block;
+  background-color: lighten($background, 10%);
+  border-radius: $width $width 0 0;
+  z-index:1;
+  &:after {
+    content: '';
+    width: $width - ($gaugewidth * 2);
+    height: $height - $gaugewidth;
+    top: $gaugewidth;
+    left: $gaugewidth;
+    background-color: $background;
+    border-radius: $width $width 0 0;
+    position: absolute;
+    z-index: 3;
+  }
+}
+
+
+.spinner {
+  width: $width;
+  height: $height;
+  background-color: $primary;
+  position: absolute;
+  z-index: 2;
+  transform-origin: top center;
+  transform: rotate(0deg);
+  transition: transform $speed ease;
+  transform: translateZ(0);
+  border-radius: 0 0 $width $width;
+  &.alt {
+    background-color: $alternate;
+  }
+}
+
+.gauge-cont {
+  display: inline-block;
+  position: relative;
+  width: $width;
+  height: $height;
+  margin-left: 30px;
+  margin-top: 80%;
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.pointer {
+  display: block;
+  width: 6px;
+  height: $height + 5;
+  background-color: $white;
+  border-radius: 4px 4px 0 0;
+  position: absolute;
+  z-index: 4;
+  bottom: 0px;
+  left: ($width / 2) - 3;
+  transform: rotate(-90deg);
+  transform-origin: center bottom;
+  transition: transform $speed ease;
+}
+
+.pointer-knob {
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  position: absolute;
+  left: ($width / 2) - 10;
+  bottom: -10px;
+  z-index: 5;
+  border-radius: 20px;
+}
