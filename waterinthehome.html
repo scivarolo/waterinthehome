@@ -1,0 +1,436 @@
+ <!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Water in the Home Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <div class="proceed-alert">Please answer all questions before proceeding.</div>
+
+        <div class="questions-wrapper">
+
+          <div class="sidebar main-sidebar">
+            <header class="sidebar-logo">
+              <img src="images/title.svg" />
+            </header>
+
+            <!-- gauge -->
+            <div class="gauge-cont" data-percentage="80">
+              <div class="gauge">
+                <div class="inner"></div>
+                <div class="spinner"></div>
+              </div>
+              <div class="pointer"></div>
+              <div class="pointer-knob"></div>
+            </div>
+            <!-- end gauge -->
+
+            <div class="running-total">Running Total: <span id="runningDailyUsageTotal">0</span> gallons</div>
+          </div>
+
+
+          <ol class="questions">
+            <li class="slide current-slide landing-slide">
+              <section class="landing">
+                <img src="images/title.svg" class="landing-image" alt="Calculate Your Water Usage" />
+                <h2 class="landing-subtitle">See how your usage compares to the national average</h2>
+                <button class="begin-button landing-button">Begin</button>
+              </section>
+            </li>
+            <li class="slide">
+              <!-- Household Questions -->
+              <section class="household question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many people are in your household?</legend>
+                    <input type="radio" name="household_count" value="1" id="household_count_1"><label for="household_count_1">1</label>
+                    <input type="radio" name="household_count" value="2" id="household_count_2"><label for="household_count_2">2</label>
+                    <input type="radio" name="household_count" value="3" id="household_count_3"><label for="household_count_3">3</label>
+                    <input type="radio" name="household_count" value="4" id="household_count_4"><label for="household_count_4">4</label>
+                    <input type="radio" name="household_count" value="5" id="household_count_5"><label for="household_count_5">5</label><br />
+                    <input type="radio" name="household_count" value="6" id="household_count_6"><label for="household_count_6">6</label>
+                    <input type="radio" name="household_count" value="7" id="household_count_7"><label for="household_count_7">7</label>
+                    <input type="radio" name="household_count" value="8" id="household_count_8"><label for="household_count_8">8</label>
+                    <input type="radio" name="household_count" value="9" id="household_count_9"><label for="household_count_9">9</label>
+                    <input type="radio" name="household_count" value="10" id="household_count_10"><label for="household_count_10">10</label>
+                  </fieldset>
+                </form>
+                <progress value="1" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Shower Questions -->
+              <section class="shower question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many showers do you take daily?</legend>
+                    <input type="radio" name="shower_count" value="0" id="shower0"><label for="shower0">0</label>
+                    <input type="radio" name="shower_count" value="1" id="shower1"><label for="shower1">1</label>
+                    <input type="radio" name="shower_count" value="2" id="shower2"><label for="shower2">2</label>
+                    <input type="radio" name="shower_count" value="3" id="shower3"><label for="shower3">3</label>
+                    <input type="radio" name="shower_count" value="4" id="shower4"><label for="shower4">4</label>
+                  </fieldset>
+                  <fieldset class="round-buttons">
+                    <legend>How many minutes do your showers typically last?</legend>
+                    <input type="radio" name="shower_minutes" value="0" id="showermin0"><label for="showermin0">0</label>
+                    <input type="radio" name="shower_minutes" value="5" id="showermin5"><label for="showermin5">5</label>
+                    <input type="radio" name="shower_minutes" value="10" id="showermin10"><label for="showermin10">10</label>
+                    <input type="radio" name="shower_minutes" value="15" id="showermin15"><label for="showermin15">15</label>
+                    <input type="radio" name="shower_minutes" value="20" id="showermin20"><label for="showermin20">20</label>
+                  </fieldset>
+                  <fieldset class="regular-buttons">
+                    <legend>Do you have a low-flow shower head?</legend>
+                    <input type="radio" name="shower_low_flow" value="1" id="slf1"><label for="slf1">Yes</label>
+                    <input type="radio" name="shower_low_flow" value="0" id="slf2"><label for="slf2">No</label>
+                    <input type="radio" name="shower_low_flow" value="0" id="slf3"><label for="slf3">I Don't Know</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="4" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+            <li class="slide">
+              <!-- Bath Questions -->
+              <section class="bath question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many baths do you take per week?</legend>
+                    <input type="radio" name="bath_count" value="0" id="bath0"><label for="bath0">0</label>
+                    <input type="radio" name="bath_count" value="1" id="bath1"><label for="bath1">1</label>
+                    <input type="radio" name="bath_count" value="2" id="bath2"><label for="bath2">2</label>
+                    <input type="radio" name="bath_count" value="3" id="bath3"><label for="bath3">3</label>
+                    <input type="radio" name="bath_count" value="4" id="bath4"><label for="bath4">4</label>
+                    <input type="radio" name="bath_count" value="5" id="bath5"><label for="bath5">5</label>
+                    <input type="radio" name="bath_count" value="6" id="bath6"><label for="bath6">6</label>
+                    <input type="radio" name="bath_count" value="7" id="bath7"><label for="bath7">7</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="5" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Toilet Questions -->
+              <section class="toilet question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many times do you flush the toilet per day?</legend>
+                    <input type="radio" name="toilet_count" value="1" id="toilet1"><label for="toilet1">1</label>
+                    <input type="radio" name="toilet_count" value="2" id="toilet2"><label for="toilet2">2</label>
+                    <input type="radio" name="toilet_count" value="3" id="toilet3"><label for="toilet3">3</label>
+                    <input type="radio" name="toilet_count" value="4" id="toilet4"><label for="toilet4">4</label>
+                    <input type="radio" name="toilet_count" value="5" id="toilet5"><label for="toilet5">5</label>
+                    <input type="radio" name="toilet_count" value="6" id="toilet6"><label for="toilet6">6</label>
+                    <input type="radio" name="toilet_count" value="7" id="toilet7"><label for="toilet7">7</label>
+                    <input type="radio" name="toilet_count" value="8" id="toilet8"><label for="toilet8">8</label>
+                  </fieldset>
+                  <fieldset class="regular-buttons">
+                    <legend>Do you have a low-flow toilet?</legend>
+                    <input type="radio" name="toilet_low_flow" value="1" id="tlfy"><label for="tlfy">Yes</label>
+                    <input type="radio" name="toilet_low_flow" value="0" id="tlfn"><label for="tlfn">No</label>
+                    <input type="radio" name="toilet_low_flow" value="0" id="tlfidk"><label for="tlfidk">I don't know</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="7" max="20"></progress>
+                <button class="continue-button">continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Bathroom Sink Questions -->
+              <section class="bathroom-sink question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many minutes do you spend using the bathroom sink?</legend>
+                    <input type="radio" name="bath_sink_minutes" value="5" id="bathsink5"><label for="bathsink5">5</label>
+                    <input type="radio" name="bath_sink_minutes" value="10" id="bathsink10"><label for="bathsink10">10</label>
+                    <input type="radio" name="bath_sink_minutes" value="15" id="bathsink15"><label for="bathsink15">15</label>
+                    <input type="radio" name="bath_sink_minutes" value="20" id="bathsink20"><label for="bathsink20">20</label>
+                  </fieldset>
+                  <fieldset class="regular-buttons">
+                    <legend>Do you have a low-flow sink?</legend>
+                    <input type="radio" name="bath_sink_low_flow" value="1" id="lfsy"><label for="lfsy">Yes</label>
+                    <input type="radio" name="bath_sink_low_flow" value="0" id="lfsn"><label for="lfsn">No</label>
+                    <input type="radio" name="bath_sink_low_flow" value="0" id="lfsidk"><label for="lfsidk">I don't know</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="9" max="20"></progress>
+                <button class="continue-button">continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Kitchen Sink Questions -->
+              <section class="kitchen-sink question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many minutes do you spend using the kitchen sink?</legend>
+                    <span class="legend-details">(Washing dishes, rinsing produce, etc.)</span>
+                    <input type="radio" name="kitchen_sink_minutes" value="0" id="ks0"><label for="ks0">0</label>
+                    <input type="radio" name="kitchen_sink_minutes" value="5" id="ks5"><label for="ks5">5</label>
+                    <input type="radio" name="kitchen_sink_minutes" value="10" id="ks10"><label for="ks10">10</label>
+                    <input type="radio" name="kitchen_sink_minutes" value="15" id="ks15"><label for="ks15">15</label>
+                    <input type="radio" name="kitchen_sink_minutes" value="20" id="ks20"><label for="ks20">20</label>
+                    <input type="radio" name="kitchen_sink_minutes" value="25" id="ks25"><label for="ks25">25</label>
+                  </fieldset>
+                  <fieldset class="regular-buttons">
+                    <legend>Do you have a low-flow kitchen sink?</legend>
+                    <input type="radio" name="kitchen_sink_low_flow" value="1" id="lfksy"><label for="lfksy">Yes</label>
+                    <input type="radio" name="kitchen_sink_low_flow" value="0" id="lfksn"><label for="lfksn">No</label>
+                    <input type="radio" name="kitchen_sink_low_flow" value="0" id="lfksidk"><label for="lfksidk">I don't know</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="11" max="20"></progress>
+                <button class="continue-button">continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Dishwasher Questions -->
+              <section class="dishwasher question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many times is the dishwasher used per week?</legend>
+                    <input type="radio" name="dishwasher_weekly" value="0" id="dish0"><label for="dish0">0</label>
+                    <input type="radio" name="dishwasher_weekly" value="1" id="dish1"><label for="dish1">1</label>
+                    <input type="radio" name="dishwasher_weekly" value="2" id="dish2"><label for="dish2">2</label>
+                    <input type="radio" name="dishwasher_weekly" value="3" id="dish3"><label for="dish3">3</label>
+                    <input type="radio" name="dishwasher_weekly" value="4" id="dish4"><label for="dish4">4</label>
+                    <input type="radio" name="dishwasher_weekly" value="5" id="dish5"><label for="dish5">5</label>
+                    <input type="radio" name="dishwasher_weekly" value="6" id="dish6"><label for="dish6">6</label>
+                    <input type="radio" name="dishwasher_weekly" value="7" id="dish7"><label for="dish7">7</label>
+                  </fieldset>
+                  <fieldset class="regular-buttons">
+                    <legend>Is the dishwasher EnergyStar compliant?</legend>
+                    <input type="radio" name="dishwasher_saving" value="1" id="dishy"><label for="dishy">Yes</label>
+                    <input type="radio" name="dishwasher_saving" value="0" id="dishn"><label for="dishn">No</label>
+                    <input type="radio" name="dishwasher_saving" value="0" id="dishidk"><label for="dishidk">I don't know</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="13" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Washing Machine Questions -->
+              <section class="washing-machine question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many loads of clothes are done in your household per week?</legend>
+                    <input type="radio" name="laundry_weekly" value="0" id="l0"><label for="l0">0</label>
+                    <input type="radio" name="laundry_weekly" value="1" id="l1"><label for="l1">1</label>
+                    <input type="radio" name="laundry_weekly" value="2" id="l2"><label for="l2">2</label>
+                    <input type="radio" name="laundry_weekly" value="3" id="l3"><label for="l3">3</label>
+                    <input type="radio" name="laundry_weekly" value="4" id="l4"><label for="l4">4</label>
+                    <input type="radio" name="laundry_weekly" value="5" id="l5"><label for="l5">5</label>
+                    <input type="radio" name="laundry_weekly" value="6" id="l6"><label for="l6">6</label>
+                    <input type="radio" name="laundry_weekly" value="7" id="l7"><label for="l7">7</label>
+                    <input type="radio" name="laundry_weekly" value="8" id="l8"><label for="l8">8</label>
+                    <input type="radio" name="laundry_weekly" value="9" id="l9"><label for="l9">9</label>
+                    <input type="radio" name="laundry_weekly" value="10" id="l10"><label for="l10">10</label>
+                    <input type="radio" name="laundry_weekly" value="11" id="l11"><label for="l11">11</label>
+                    <input type="radio" name="laundry_weekly" value="12" id="l12"><label for="l12">12</label>
+                    <input type="radio" name="laundry_weekly" value="13" id="l13"><label for="l13">13</label>
+                    <input type="radio" name="laundry_weekly" value="14" id="l14"><label for="l14">14</label>
+                    <input type="radio" name="laundry_weekly" value="15" id="l15"><label for="l15">15</label>
+                    <input type="radio" name="laundry_weekly" value="16" id="l16"><label for="l16">16</label>
+                  </fieldset>
+                  <fieldset class="regular-buttons">
+                    <legend>Is the washing machine EnergyStar compliant?</legend>
+                    <input type="radio" name="laundry_saving" value="1" id="ly"><label for="ly">Yes</label>
+                    <input type="radio" name="laundry_saving" value="0" id="ln"><label for="ln">No</label>
+                    <input type="radio" name="laundry_saving" value="0" id="lidk"><label for="lidk">I don't know</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="15" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Lawn Questions -->
+              <section class="lawn question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many times per week does your household water the lawn?</legend>
+                    <input type="radio" name="lawn_weekly" value="0" id="lawn0"><label for="lawn0">0</label>
+                    <input type="radio" name="lawn_weekly" value="1" id="lawn1"><label for="lawn1">1</label>
+                    <input type="radio" name="lawn_weekly" value="2" id="lawn2"><label for="lawn2">2</label>
+                    <input type="radio" name="lawn_weekly" value="3" id="lawn3"><label for="lawn3">3</label>
+                    <input type="radio" name="lawn_weekly" value="4" id="lawn4"><label for="lawn4">4</label>
+                    <input type="radio" name="lawn_weekly" value="5" id="lawn5"><label for="lawn5">5</label>
+                    <input type="radio" name="lawn_weekly" value="6" id="lawn6"><label for="lawn6">6</label>
+                    <input type="radio" name="lawn_weekly" value="7" id="lawn7"><label for="lawn7">7</label>
+                  </fieldset>
+                  <fieldset class="round-buttons">
+                    <legend>How many minutes each time?</legend>
+                    <input type="radio" name="lawn_minutes" value="5" id="lawnmin5"><label for="lawnmin5">5</label>
+                    <input type="radio" name="lawn_minutes" value="10" id="lawnmin10"><label for="lawnmin10">10</label>
+                    <input type="radio" name="lawn_minutes" value="15" id="lawnmin15"><label for="lawnmin15">15</label>
+                    <input type="radio" name="lawn_minutes" value="20" id="lawnmin20"><label for="lawnmin20">20</label>
+                    <input type="radio" name="lawn_minutes" value="25" id="lawnmin25"><label for="lawnmin25">25</label>
+                    <input type="radio" name="lawn_minutes" value="30" id="lawnmin30"><label for="lawnmin30">30</label>
+                    <input type="radio" name="lawn_minutes" value="35" id="lawnmin35"><label for="lawnmin35">35</label>
+                    <input type="radio" name="lawn_minutes" value="40" id="lawnmin40"><label for="lawnmin40">40</label>
+                    <input type="radio" name="lawn_minutes" value="45" id="lawnmin45"><label for="lawnmin45">45</label>
+                    <input type="radio" name="lawn_minutes" value="50" id="lawnmin50"><label for="lawnmin50">50</label>
+                    <input type="radio" name="lawn_minutes" value="55" id="lawnmin55"><label for="lawnmin55">55</label>
+                    <input type="radio" name="lawn_minutes" value="60" id="lawnmin60"><label for="lawnmin60">60</label>
+                  </fieldset>
+                  <fieldset class="regular-buttons">
+                    <legend>Do you have a sprinkler system with a rain sensor?</legend>
+                    <input type="radio" name="rain_sensor" value="1" id="rsy"><label for="rsy">Yes</label>
+                    <input type="radio" name="rain_sensor" value="0" id="rsn"><label for="rsn">No</label>
+                    <input type="radio" name="rain_sensor" value="0" id="rsidk"><label for="rsidk">I don't know</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="18" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Hose Questions -->
+              <section class="hose question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many minutes per week do you use the hose to wash cars, pets, etc.?</legend>
+                    <input type="radio" name="hose_minutes" value="0" id="hose0"><label for="hose0">0</label>
+                    <input type="radio" name="hose_minutes" value="5" id="hose5"><label for="hose5">5</label>
+                    <input type="radio" name="hose_minutes" value="10" id="hose10"><label for="hose10">10</label>
+                    <input type="radio" name="hose_minutes" value="15" id="hose15"><label for="hose15">15</label>
+                    <input type="radio" name="hose_minutes" value="20" id="hose20"><label for="hose20">20</label>
+                    <input type="radio" name="hose_minutes" value="25" id="hose25"><label for="hose25">25</label>
+                    <input type="radio" name="hose_minutes" value="30" id="hose30"><label for="hose30">30</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="19" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+
+            <li class="slide">
+              <!-- Pool Questions -->
+              <section class="pool question-page">
+                <form>
+                  <fieldset class="round-buttons">
+                    <legend>How many minutes per week do you spend filling your pool?</legend>
+                    <input type="radio" name="pool_minutes" value="15" id="pool15"><label for="pool15">15</label>
+                    <input type="radio" name="pool_minutes" value="30" id="pool30"><label for="pool30">30</label>
+                    <input type="radio" name="pool_minutes" value="45" id="pool45"><label for="pool45">45</label>
+                    <input type="radio" name="pool_minutes" value="60" id="pool60"><label for="pool60">60</label>
+                    <input type="radio" name="pool_minutes" value="0" id="pool0"><label for="pool0" class="regular-button">I don't have a pool.</label>
+                  </fieldset>
+                </form>
+                <button class="previous-button">Previous</button>
+                <progress value="20" max="20"></progress>
+                <button class="continue-button">Continue</button>
+              </section>
+            </li>
+
+            <li class="slide results-slide">
+              <!-- Results Section -->
+              <section class="results results-page">
+                <div class="center-column">
+                  <div class="daily-readout">
+                    <span class="daily-header"></span>
+                    <span class="daily-value"><span id="totalDailyUsage">750</span> gallons</span>
+                  </div>
+                  <div class="chartist">
+                    <div class="chartist-chart"></div>
+                    <div class="chartist-legend">
+                      <h1>Your Usage Breakdown</h1>
+                      <div class="bathroom-usage">
+                        <span class="legend-label">Bathroom</span>
+                        <span class="legend-value"><span id="bathroomPercentage">25</span>%</span>
+                      </div>
+                      <div class="kitchen-usage">
+                        <span class="legend-label">Kitchen</span>
+                        <span class="legend-value"><span id="kitchenPercentage">25</span>%</span>
+                      </div>
+                      <div class="laundry-usage">
+                        <span class="legend-label">Laundry</span>
+                        <span class="legend-value"><span id="laundryPercentage">25</span>%</span>
+                      </div>
+                      <div class="outside-usage">
+                        <span class="legend-label">Outside</span>
+                        <span class="legend-value"><span id="outsidePercentage">25</span>%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-column">
+                  <h1 class="totals-heading">Personal Water Usage</h1>
+                  <div class="daily-total total">
+                    <span class="usage-label">Daily</span>
+                    <span class="usage-value"><span id="dailyUsage">75</span> Gallons</span>
+                  </div>
+                  <div class="weekly-total total">
+                    <span class="usage-label">Weekly</span>
+                    <span class="usage-value"><span id="weeklyUsage">2,618</span> Gallons</span>
+                  </div>
+                  <div class="monthly-total total">
+                    <span class="usage-label">Monthly</span>
+                    <span class="usage-value"><span id="monthlyUsage">10,472</span> Gallons</span>
+                  </div>
+                  <div class="yearly-total total">
+                    <span class="usage-label">Yearly</span>
+                    <span class="usage-value"><span id="yearlyUsage">136,136</span> Gallons</span>
+                  </div>
+                </div>
+
+                <button class="restart-button">Start over</button>
+              </section>
+            </li>
+          </ol>
+
+          <div class="sidebar results-sidebar">
+            <header class="sidebar-logo">
+              <img src="images/title.svg" />
+            </header>
+            <div class="average-readout">
+              <span class="small-header-above">National Average</span>
+              <span class="average-value">90 Gallons</span>
+            </div>
+            <div class="average-readout">
+              <span class="small-header-above">You Use</span>
+              <span class="average-value" id="average-daily-usage"><span id="nationalDifference">100</span> Gallons</span>
+              <span class="small-below"><span class="less-more" id="differenceWord">less</span> than the average</span>
+            </div>
+          </div>
+
+        </div><!-- .questions-wrapper -->
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/chartist.js"></script>
+        <script src="js/layout.js"></script>
+        <script src="js/gauge.js"></script>
+        <script src="js/watercalculator.js"></script>
+
+    </body>
+</html>
